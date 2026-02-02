@@ -79,7 +79,23 @@ A spreadsheet parser outputs `html`, preserving the original layout and table st
 
 ### Image parser
 
-An Image parser uses a native OCR model for text extraction by default. You may select an alternative VLM model, provided that you have properly configured it on the **Model provider** page.
+An Image parser processes image files (PNG, JPG, JPEG, GIF, TIF). The output is `json` format. You have two parsing options:
+
+- **OCR (Default)**: Uses native OCR model for text extraction only. Suitable when you only need to extract visible text from images.
+- **Vision Language Model (VLM)**: Select a VLM model to generate comprehensive image descriptions instead of just text extraction. This is ideal when you need to understand the full context of images including:
+  - Scene description
+  - Objects and their relationships
+  - Colors, layout, and composition
+  - Actions and activities depicted
+  - Overall context and meaning
+
+**Configuration options:**
+- `parse_method`: Set to `"ocr"` (default) or a VLM model name (e.g., `"gpt-4o"`, `"gemini-1.5-pro"`, `"claude-3-opus-20240229"`)
+- `lang`: Language setting (`"English"`, `"Chinese"`, etc.) - used when VLM is selected
+- `system_prompt`: (Optional) Custom prompt to guide the VLM's description style. For example: *"Provide a detailed description of this image, focusing on the main subjects and their interactions."*
+- `output_format`: Output format, typically `"json"`
+
+**Important:** To use VLM models, ensure they are properly configured on the **Model providers** page. See the [Image Full Description Guide](/docs/guides/dataset/image_full_description) for detailed REST API examples and more configuration options.
 
 ### Email parser
 

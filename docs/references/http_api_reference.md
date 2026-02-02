@@ -552,7 +552,13 @@ curl --request POST \
   - If `"chunk_method"` is `"qa"`, `"manuel"`, `"paper"`, `"book"`, `"laws"`, or `"presentation"`, the `"parser_config"` object contains the following attribute:  
     - `"raptor"`: `object` RAPTOR-specific settings.
       - Defaults to: `{"use_raptor": false}`.
-  - If `"chunk_method"` is `"table"`, `"picture"`, `"one"`, or `"email"`, `"parser_config"` is an empty JSON object.
+  - If `"chunk_method"` is `"picture"`, the `"parser_config"` object contains the following attributes:
+    - `"image_context_size"`: `int`
+      - The number of context tokens to include around images.
+      - Defaults to `0`
+      - Minimum: `0`
+    - **Note**: The `picture` chunk method automatically uses OCR for text extraction and will call a VLM (Vision Language Model) for full image description only when OCR text is short (<32 characters). For more control over image description generation, use an ingestion pipeline with a Parser component. See [Image Full Description Guide](/docs/guides/dataset/image_full_description) for details.
+  - If `"chunk_method"` is `"table"`, `"one"`, or `"email"`, `"parser_config"` is an empty JSON object.
 
 - `"parse_type"`: (*Body parameter*), `int`  
   The ingestion pipeline parse type identifier, i.e., the number of parsers in your **Parser** component.  
@@ -793,7 +799,13 @@ curl --request PUT \
   - If `"chunk_method"` is `"qa"`, `"manuel"`, `"paper"`, `"book"`, `"laws"`, or `"presentation"`, the `"parser_config"` object contains the following attribute:  
     - `"raptor"`: `object` RAPTOR-specific settings.
       - Defaults to: `{"use_raptor": false}`.
-  - If `"chunk_method"` is `"table"`, `"picture"`, `"one"`, or `"email"`, `"parser_config"` is an empty JSON object.
+  - If `"chunk_method"` is `"picture"`, the `"parser_config"` object contains the following attributes:
+    - `"image_context_size"`: `int`
+      - The number of context tokens to include around images.
+      - Defaults to `0`
+      - Minimum: `0`
+    - **Note**: The `picture` chunk method automatically uses OCR for text extraction and will call a VLM (Vision Language Model) for full image description only when OCR text is short (<32 characters). For more control over image description generation, use an ingestion pipeline with a Parser component. See [Image Full Description Guide](/docs/guides/dataset/image_full_description) for details.
+  - If `"chunk_method"` is `"table"`, `"one"`, or `"email"`, `"parser_config"` is an empty JSON object.
 
 #### Response
 
@@ -1419,7 +1431,13 @@ curl --request PUT \
     - `"raptor"`: RAPTOR-specific settings. Defaults to: `{"use_raptor": false}`.
   - If `"chunk_method"` is `"qa"`, `"manuel"`, `"paper"`, `"book"`, `"laws"`, or `"presentation"`, the `"parser_config"` object contains the following attribute:
     - `"raptor"`: RAPTOR-specific settings. Defaults to: `{"use_raptor": false}`.
-  - If `"chunk_method"` is `"table"`, `"picture"`, `"one"`, or `"email"`, `"parser_config"` is an empty JSON object.
+  - If `"chunk_method"` is `"picture"`, the `"parser_config"` object contains the following attributes:
+    - `"image_context_size"`: `int`
+      - The number of context tokens to include around images.
+      - Defaults to `0`
+      - Minimum: `0`
+    - **Note**: The `picture` chunk method automatically uses OCR for text extraction and will call a VLM (Vision Language Model) for full image description only when OCR text is short (<32 characters). For more control over image description generation, use an ingestion pipeline with a Parser component. See [Image Full Description Guide](/docs/guides/dataset/image_full_description) for details.
+  - If `"chunk_method"` is `"table"`, `"one"`, or `"email"`, `"parser_config"` is an empty JSON object.
 - `"enabled"`: (*Body parameter*), `integer`  
   Whether the document should be **available** in the knowledge base.  
   - `1` → （available）  
