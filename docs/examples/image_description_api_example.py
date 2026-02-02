@@ -19,7 +19,7 @@ import os
 from typing import Optional
 
 # Configuration
-RAGFLOW_URL = os.environ.get("RAGFLOW_URL", "http://localhost:8086")
+RAGFLOW_URL = os.environ.get("RAGFLOW_URL", "http://localhost:8086")  # Default port 8086, verify your installation
 API_KEY = os.environ.get("RAGFLOW_API_KEY", "your-api-key-here")
 
 HEADERS = {

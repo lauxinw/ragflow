@@ -32,9 +32,9 @@ python3 image_description_api_example.py
 ```
 
 **Related Documentation:**
-- [Image Full Description Guide](/docs/guides/dataset/image_full_description)
-- [HTTP API Reference](/docs/references/http_api_reference)
-- [Ingestion Pipeline Quickstart](/docs/guides/agent/agent_quickstarts/ingestion_pipeline_quickstart)
+- [Image Full Description Guide](../image_full_description)
+- [HTTP API Reference](../../references/http_api_reference)
+- [Ingestion Pipeline Quickstart](../../agent/agent_quickstarts/ingestion_pipeline_quickstart)
 
 ## Contributing
 
