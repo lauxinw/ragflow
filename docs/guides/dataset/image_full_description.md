@@ -267,6 +267,10 @@ Common VLM (Vision Language Models) include:
 
 **Important:** Make sure you have configured the corresponding VLM model in RAGFlow's model management.
 
+## Practical Example
+
+For a complete working example with Python code, see [image_description_api_example.py](/docs/examples/image_description_api_example.py) which demonstrates all three approaches with step-by-step API calls.
+
 ---
 
 ## Code References
