@@ -46,7 +46,9 @@ A **Parser** component converts your files into structured text while preserving
   - **DeepDoc** (Default): RAGFlow's built-in model. Best for scanned documents or complex layouts with tables.
   - **MinerU**: Industry-leading for complex elements like mathematical formulas and intricate layouts.
   - **Naive**: Simple text extraction. Use for clean, text-based PDFs without complex elements.
-- For image files: Default uses OCR. Can also configure Vision Language Models (VLMs) for advanced visual understanding.
+- For image files: 
+  - **OCR (Default)**: Extracts visible text from images.
+  - **Vision Language Models (VLMs)**: For comprehensive image understanding, set `parse_method` to a VLM model name (e.g., `gpt-4o`, `gemini-1.5-pro`) to generate detailed image descriptions including scene, objects, colors, layout, and context. You can customize the description style using the `system_prompt` field. See the [Image Full Description Guide](/docs/guides/dataset/image_full_description) for detailed REST API examples.
 - For Email Files: Select specific fields to parse (e.g., "subject", "body") for precise extraction.
 - For Spreadsheets: Outputs in HTML format, preserving row/column structure.
 - For Word/PPT: Outputs in JSON format, retaining document hierarchy (titles, paragraphs, slides).
