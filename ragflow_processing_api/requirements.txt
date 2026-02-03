@@ -1,0 +1,22 @@
+# RAGFlow Processing API Requirements
+
+# Core dependencies
+numpy>=1.20.0
+pandas>=1.3.0
+Pillow>=9.0.0
+openpyxl>=3.0.0
+
+# Optional dependencies for full functionality
+
+# OCR engines (choose one or more)
+# paddleocr>=2.6.0  # PaddleOCR for OCR functionality
+# pytesseract>=0.3.10  # Tesseract OCR
+# easyocr>=1.6.0  # EasyOCR
+
+# Vision-Language Models (for image description)
+# transformers>=4.30.0
+# torch>=2.0.0
+
+# Additional utilities
+# opencv-python>=4.5.0  # For advanced image processing
+# onnxruntime>=1.15.0  # For ONNX model inference
